@@ -9807,6 +9807,26 @@ a:focus {
   justify-content: center;
 }
 
+.border-left-indigo {
+    border-left: 0.25rem solid #6610f2 !important;
+}
+
+.border-left-pink {
+   border-left: 0.25rem solid #e83e8c !important;
+}
+
+.border-left-orange {
+  border-left: 0.25rem solid #fd7e14 !important;
+}
+
+.border-left-dark {
+  border-left: 0.25rem solid #5a5c69 !important;
+}
+
+.border-left-cyan {
+  border-left: 0.25rem solid #36b9cc !important;
+}
+
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
 }
