@@ -31,7 +31,7 @@
                         <label class="custom-control-label" for="customCheck">Recordarme</label>
                       </div>
                     </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <a href="inicio" class="btn btn-primary btn-user btn-block">
                       Acceder
                     </a>
                     <hr>

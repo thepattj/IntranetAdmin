@@ -8,4 +8,10 @@ class Prueba extends CI_Controller {
 		//$this->load->view('welcome_message');
 		echo "SALIO LA PRUEBA";
 	}
+
+	public function dif()
+	{
+		//$this->load->view('welcome_message');
+		echo "SALIO LA PRUEBA de un function diferente";
+	}
 }

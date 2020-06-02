@@ -10,4 +10,16 @@ class Estaciones extends CI_Controller {
 		$this->load->view('estacion/bodyinicio');
 		$this->load->view('estacion/footer');
 	}
+
+	public function AGN980316FJ5(){
+		$this->load->view('estacion/header');
+		$this->load->view('estacion/AGN980316FJ5');
+		$this->load->view('estacion/footer');
+	}
+
+	public function PL1743(){
+		$this->load->view('estacion/header');
+		$this->load->view('estacion/1743');
+		$this->load->view('estacion/footer');
+	}
 }

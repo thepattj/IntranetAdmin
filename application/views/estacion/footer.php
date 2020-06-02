@@ -55,6 +55,9 @@
   <script src="<?php echo base_url();?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>assets/js/demo/chart-pie-demo.js"></script>
 
+  <!-- Funciones que se usaran para mover estilos -->
+  <script src="<?php echo base_url();?>assets/js/funciones.js"></script>
+
 </body>
 
 </html>

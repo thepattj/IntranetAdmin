@@ -1,3 +1,23 @@
+<?php
+    function Conectarse() {
+                  $host="localhost";
+                  $user="root"; 
+                  $pass="";
+                  $database="intranet";
+
+                  $link = new mysqli($host, $user, $pass, $database);
+                  $acentos= $link->query("SET NAMES 'utf8'");
+
+                  if($link->connect_errno > 0){
+                    echo "ERROR AL CONECTARSE A LA BASE DE DATOS";
+                  }else{
+                    return $link;
+                    
+                  }
+                }
+
+                $con = Conectarse();
+?>
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -302,14 +322,361 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <div id="regreso" style="display: none !important;" class="d-sm-flex align-items-center justify-content-between mb-4"> <h1 class="h3 mb-0 text-gray-800"> < </h1> </div>
 
           <!-- Page Heading -->
           <!-- Content Row -->
-          <div class="row">
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- Pending Requests Card Example -->
+          <!-- CHIHUAHUA -->
+          <div class="row" id="est8" style="display: none;">
+            <?php 
+                  $sqlestacion8 = "SELECT razonSocial as nombre, rfc as clave FROM cliente WHERE idEstado = 8 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado8 = mysqli_query($con, $sqlestacion8);
+                  while ($row = $resultado8->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <a class="nav-link" href="estaciones/<?php echo ($row->clave); ?>" data-toggle="" data-target="" aria-expanded="true" aria-controls="collapseTwo"> <div class="card border-left-primary shadow h-100 py-2" id="<?php echo ($row->clave); ?>" >
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div> </a>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est5" style="display: none;">
+            <?php 
+                  $sqlestacion5 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 5 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado5 = mysqli_query($con, $sqlestacion5);
+                  while ($row = $resultado5->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est10" style="display: none;">
+            <?php 
+                  $sqlestacion10 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 10 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado10 = mysqli_query($con, $sqlestacion10);
+                  while ($row = $resultado10->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est11" style="display: none;">
+            <?php 
+                  $sqlestacion11 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 11 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado11 = mysqli_query($con, $sqlestacion11);
+                  while ($row = $resultado11->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est12" style="display: none;">
+            <?php 
+                  $sqlestacion12 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 12 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado12 = mysqli_query($con, $sqlestacion12);
+                  while ($row = $resultado12->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est13" style="display: none;">
+            <?php 
+                  $sqlestacion13 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 13 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado13 = mysqli_query($con, $sqlestacion13);
+                  while ($row = $resultado13->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est14" style="display: none;">
+            <?php 
+                  $sqlestacion14 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 14 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado14 = mysqli_query($con, $sqlestacion14);
+                  while ($row = $resultado14->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est15" style="display: none;">
+            <?php 
+                  $sqlestacion15 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 15 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado15 = mysqli_query($con, $sqlestacion14);
+                  while ($row = $resultado15->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est16" style="display: none;">
+            <?php 
+                  $sqlestacion16 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 16 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado16 = mysqli_query($con, $sqlestacion16);
+                  while ($row = $resultado16->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est17" style="display: none;">
+            <?php 
+                  $sqlestacion17 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 17 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado17 = mysqli_query($con, $sqlestacion17);
+                  while ($row = $resultado17->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est19" style="display: none;">
+            <?php 
+                  $sqlestacion19 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 19 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado19 = mysqli_query($con, $sqlestacion19);
+                  while ($row = $resultado19->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est22" style="display: none;">
+            <?php 
+                  $sqlestacion22 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 22 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado22 = mysqli_query($con, $sqlestacion22);
+                  while ($row = $resultado22->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est24" style="display: none;">
+            <?php 
+                  $sqlestacion24 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 24 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado24 = mysqli_query($con, $sqlestacion24);
+                  while ($row = $resultado24->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est28" style="display: none;">
+            <?php 
+                  $sqlestacion28 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 28 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado28 = mysqli_query($con, $sqlestacion28);
+                  while ($row = $resultado28->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est30" style="display: none;">
+            <?php 
+                  $sqlestacion30 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 30 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado30 = mysqli_query($con, $sqlestacion30);
+                  while ($row = $resultado30->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
+          </div>
+
+          <div class="row" id="est32" style="display: none;">
+            <?php 
+                  $sqlestacion32 = "SELECT razonSocial as nombre FROM cliente WHERE idEstado = 32 GROUP BY razonSocial ORDER BY razonSocial ASC";
+                  $resultado32 = mysqli_query($con, $sqlestacion32);
+                  while ($row = $resultado32->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombre); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <?php }
+            ?>
           </div>
 
           <!-- Content Row -->
@@ -327,294 +694,26 @@
           </div>
 
           <!-- Content Row -->
-          <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Aguscalientes</div>
+          <div class="row" id="estadosE">
+            <?php 
+                  $sqlestados = "SELECT estado.idEstado as p, estado.nombre as nombrestado FROM cliente INNER JOIN estado ON cliente.idEstado = estado.idEstado GROUP BY estado.nombre ORDER BY estado.nombre ASC";
+                  $resultado = mysqli_query($con, $sqlestados);
+                  while ($row = $resultado->fetch_object()) { ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2" id="estado<?php echo ($row->p); ?>">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($row->nombrestado); ?></div>
+                            </div>
+                            <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Coahuila de Zaragoza</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Chihuahua</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Durango</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Guanajuato</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-secondary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Guerrero</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-indigo shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Hidalgo</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-pink shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Jalisco</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-orange shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Estado de México</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-dark shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Michoacán de Ocampo</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-cyan shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Morelos</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-pink shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Nayarit</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-indigo shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Nuevo León</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-orange shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Oaxaca de Juárez</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Puebla</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Querétaro</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">San Luis Potosí</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Tamaulipas</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Veracruz de Ignacio de la Llave</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-              <div class="card border-left-secondary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Estado de</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Zacatecas</div>
-                    </div>
-                    <!-- <div class="col-auto"> <i class="fas fa-calendar fa-2x text-gray-300"></i> </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            
-
+            <?php }
+            ?>
 
           </div>
 
